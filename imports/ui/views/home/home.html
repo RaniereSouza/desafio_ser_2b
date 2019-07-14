@@ -1,0 +1,103 @@
+<template name="Home">
+    <div class="page-container">
+
+        {{!-- search field, search button & clear search --}}
+        <div class="search-field-wrapper">
+            <div class="clear-search">
+                <span class="far fa-trash-alt"></span>
+            </div>
+            <input class="search-field" type="search" placeholder="Type a name here">
+            <div class="search-name ready">
+                <span class="fas fa-search"></span>
+            </div>
+        </div>
+
+        {{!-- top page navigation --}}
+        <nav aria-label="">
+            <ul class="pagination justify-content-center">
+                <li class="page-item page-prev-btn">
+                    <a class="page-link"><span class="fas fa-chevron-left"></span></a>
+                </li>
+                    {{#each pagesSlice}}
+                        <li class="page-item" data-index="{{this}}">
+                            <a class="page-link {{#if canLoadMore this}}load-more ready{{else}}page-number{{/if}}" data-index="{{this}}">{{this}}</a>
+                        </li>
+                    {{/each}}
+                <li class="page-item page-next-btn">
+                    <a class="page-link"><span class="fas fa-chevron-right"></span></a>
+                </li>
+            </ul>
+        </nav>
+
+        {{!-- grid with all the comics retrieved from the API --}}
+        <div class="comics-grid-wrapper">
+            {{#each comics}}
+                <div class="comic-cover-wrapper"> 
+                    <img class="comic-cover" src="{{parseImageURL}}" alt="{{title}}">
+                </div>
+            {{else}}
+                <p class="text-center empty-data-message">
+                    {{#if dataLoaded}}
+                        Nothing to show...
+                    {{else}}
+                        <span class="fas fa-hourglass-half"></span>
+                    {{/if}}
+                    </p>
+            {{/each}}
+        </div>
+
+        {{!-- bottom page navigation --}}
+        <nav aria-label="">
+            <ul class="pagination justify-content-center">
+                <li class="page-item page-prev-btn">
+                    <a class="page-link"><span class="fas fa-chevron-left"></span></a>
+                </li>
+                    {{#each pagesSlice}}
+                        <li class="page-item" data-index="{{this}}">
+                            <a class="page-link {{#if canLoadMore this}}load-more ready{{else}}page-number{{/if}}" data-index="{{this}}">{{this}}</a>
+                        </li>
+                    {{/each}}
+                <li class="page-item page-next-btn">
+                    <a class="page-link"><span class="fas fa-chevron-right"></span></a>
+                </li>
+            </ul>
+        </nav>
+
+        {{!-- modal dinamically loaded with details from a single comic --}}
+        <div class="modal fade comic-details-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                {{#with currentComicInfo}}
+                    <div class="modal-content">
+
+                        <div class="modal-header" style="background-image: url({{fullImageURL}});">
+                            <h5 class="modal-title">{{title}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="fas fa-reply" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <p class="modal-subtitle">Creators</p>
+                            <p class="comic-creators">{{{parseCreators creators.items}}}</p>
+
+                            <p class="modal-subtitle">Description</p>
+                            <p class="comic-description">{{#if description}}{{description}}{{else}}--{{/if}}</p>
+
+                            <p class="modal-subtitle">Published in</p>
+                            <p class="comic-release-date">{{parseDate dates 'onsaleDate'}}</p>
+
+                            <p class="modal-subtitle">Link <span class="fas fa-external-link-alt"></span></p>
+                            <p class="comic-link"><a href="{{parseLink urls 'detail'}}" target="_blank">{{parseLink urls 'detail'}}</a></p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <p class="copyright-message">All data used in this project is property of ©{{year}} MARVEL.</p>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</template>

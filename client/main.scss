@@ -1,0 +1,10 @@
+/*Modificar imports do arquivo bootstrap.scss; os arquivos na
+  pasta a serem importados estão nomeados com "_" no começo,
+  por isso os imports estão com os paths incorretos. As versões
+  corretas seriam "@import '_<nome do arquivo>.scss';"*/
+@import '{}/node_modules/bootstrap/scss/bootstrap.scss';
+@import '{}/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+@import 'global.scss';
+@import 'header.scss';
+@import 'footer.scss';

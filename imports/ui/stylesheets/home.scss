@@ -1,0 +1,203 @@
+@import 'variables.scss';
+
+.page-container {
+    position: relative;
+    .search-field-wrapper {
+        position:    absolute;
+        right:       -35px;
+        top:         - $header-height;
+        height:      $header-height;
+        display:     flex;
+        align-items: center;
+        .clear-search, .search-field, .search-name {
+            float:       left;
+            height:      $header-height - 10px;
+            display:     flex;
+            align-items: center;
+        }
+        .clear-search, .search-name {
+            color:     white;
+            font-size: 25px;
+            cursor:    pointer;
+        }
+        .clear-search {
+            padding: 5px;
+        }
+        .search-field {
+            border-radius:             unset;
+            border-top-left-radius:    18px;
+            border-bottom-left-radius: 18px;
+            border:                    none;
+            text-align:                right;
+            color:                     $base-color;
+            font-family:               $brand-font;
+            @media screen and (max-width: $mobile-threshold-width) {
+                width: 50%;
+            }
+        }
+        .search-name {
+            padding:                    5px 5px 5px 8px;
+            border-radius:              unset;
+            border-top-right-radius:    18px;
+            border-bottom-right-radius: 18px;
+            background-color:           white;
+            color:                      $base-color;
+            &.disabled {
+                padding-right: 10px;
+                color:         #ccc;
+                cursor:        default;
+            }
+            @media screen and (max-width: $mobile-threshold-width) {
+                padding-left: 5px;
+            }
+        }
+        @media screen and (max-width: $mobile-threshold-width) {
+            right: -10px;
+            justify-content: flex-end;
+        }
+    }
+    nav {
+        display: inline-block;
+        width:   100%;
+        .pagination {
+            margin: 5px 0px 5px 0px;
+            .page-item {
+                cursor: pointer;
+                &.disabled {
+                    cursor: default;
+                    .page-link {
+                        color: #ccc;
+                    }
+                }
+                &.active {
+                    .page-link {
+                        background-color: $base-color;
+                        border-color:     $base-color;
+                        &:hover, &:active {
+                            color: white;
+                        }
+                    }
+                }
+                &.page-prev-btn, &.page-next-btn {
+                    color: $base-color;
+                }
+                .page-link {
+                    &.load-more {
+                        width:        60px;
+                        text-align:   center;
+                        color:        $base-color;
+                        font-family:  $brand-font;
+                        font-variant: small-caps;
+                        &.loading {
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .comics-grid-wrapper {
+        min-height: $comics-grid-height;
+        position: relative;
+        .comic-cover-wrapper {
+            float:    left;
+            position: relative;
+            margin:   5px 0px 5px 0px;
+            padding:  0px 5px 0px 5px;
+            width:    20%;
+            .comic-cover {
+                position: relative;
+                width:    100%;
+            }
+            @media screen and (max-width: $mobile-threshold-width) {
+                width: 33.33%;
+            }
+        }
+        //trick to center something vertically: position absolute, top, left, transform
+        .empty-data-message {
+            position:    absolute;
+            top:         50%;
+            left:        50%;
+            transform:   translate(-50%, -50%);
+            font-family: $brand-font;
+            font-size:   30px;
+            color:       #ccc;
+        }
+    }
+    .comic-details-modal {
+        .modal-dialog {
+            .modal-content { 
+                .modal-header {
+                    min-height:          175px;
+                    position:            relative;
+                    background-repeat:   repeat-x;
+                    background-size:     40% auto;
+                    background-position: center center;
+                    background-clip:     border-box;
+                    .modal-title {
+                        font-family: $brand-font;
+                        color:       $base-color;
+                        z-index:     2;
+                        position:    absolute;
+                        top:         50%;
+                        left:        50%;
+                        transform:   translate(-50%, -50%);
+                    }
+                    .close {
+                        color:   $base-color;
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                    &::after {
+                        content:          " ";
+                        position:         absolute;
+                        background-color: white;
+                        opacity:          0.8;
+                        top:              0;
+                        left:             0;
+                        bottom:           0;
+                        right:            0;
+                        z-index:          1;
+                    }
+                }
+                .modal-body {
+                    .modal-subtitle {
+                        text-align:   left;
+                        font-family:  $brand-font;
+                        font-variant: small-caps;
+                        color:        #666;
+                    }
+                    p:not(.modal-subtitle) {
+                        padding-left: 20px;
+                    }
+                    .comic-description {
+                        font-style: italic;
+                    }
+                    .comic-link {
+                        word-break: break-all;
+                    }
+                }
+                .modal-footer {
+                    .copyright-message {
+                        margin:     0px;
+                        width:      100%;
+                        padding:    5px 0px 5px 0px;
+                        text-align: center;
+                        font-size:  11px;
+                        color:      #666;
+                    }
+                    button {
+                        background-color: $base-color;
+                        border-color:     $base-color;
+                        color:            white;
+                        font-family:      $brand-font;
+                        font-variant:     small-caps; 
+                    }
+                }
+            }
+            @media screen and (max-width: $mobile-threshold-width) {
+                margin: 3px;
+            }
+        }
+    }
+}

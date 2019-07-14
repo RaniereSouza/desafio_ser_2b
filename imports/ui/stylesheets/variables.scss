@@ -1,0 +1,15 @@
+$base-color: #ec2427;
+$brand-font: Impact, Charcoal, sans-serif;
+
+$mobile-threshold-width: 576px;
+
+$header-height:           45px;
+$header-logo-width:       96px;
+$header-title-font-color: white;
+$header-title-font-size:  27px;
+
+$footer-height: 30px;
+
+$app-yield-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+$comics-grid-height: calc(100vh - #{$header-height} - #{$footer-height} - (2 * 48px));
