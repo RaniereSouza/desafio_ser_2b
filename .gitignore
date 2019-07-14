@@ -1,2 +1,6 @@
 node_modules/
+
+#mantendo correção de imports feita no arquivo fontawesome.scss
+! node_modules/@fortawesome/fontawesome-free
+
 .meteor/local/
