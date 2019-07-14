@@ -2,58 +2,76 @@
 
 .page-container {
     position: relative;
-    .search-field-wrapper {
-        position:    absolute;
-        right:       -35px;
-        top:         - $header-height;
-        height:      $header-height;
-        display:     flex;
-        align-items: center;
-        .clear-search, .search-field, .search-name {
-            float:       left;
-            height:      $header-height - 10px;
+    .search-field-outer {
+        position: absolute;
+        width:    100vw;
+        top:      - $header-height;
+        .search-field-wrapper {
+            position:    absolute;
+            right:       5px;
+            height:      $header-height;
             display:     flex;
             align-items: center;
-        }
-        .clear-search, .search-name {
-            color:     white;
-            font-size: 25px;
-            cursor:    pointer;
-        }
-        .clear-search {
-            padding: 5px;
-        }
-        .search-field {
-            border-radius:             unset;
-            border-top-left-radius:    18px;
-            border-bottom-left-radius: 18px;
-            border:                    none;
-            text-align:                right;
-            color:                     $base-color;
-            font-family:               $brand-font;
+            .clear-search, .search-field, .search-name {
+                float:       left;
+                height:      $header-height - 10px;
+                display:     flex;
+                align-items: center;
+            }
+            .clear-search, .search-name {
+                color:     white;
+                font-size: 25px;
+                cursor:    pointer;
+            }
+            .clear-search {
+                padding: 5px;
+            }
+            .search-field {
+                border-radius:             unset;
+                border-top-left-radius:    18px;
+                border-bottom-left-radius: 18px;
+                border:                    none;
+                text-align:                right;
+                color:                     $base-color;
+                font-family:               $brand-font;
+                @media screen and (max-width: $mobile-threshold-width) {
+                    width: 50%;
+                }
+            }
+            .search-name {
+                padding:                    5px 5px 5px 8px;
+                border-radius:              unset;
+                border-top-right-radius:    18px;
+                border-bottom-right-radius: 18px;
+                background-color:           white;
+                color:                      $base-color;
+                &.disabled {
+                    padding-right: 10px;
+                    color:         #ccc;
+                    cursor:        default;
+                }
+                @media screen and (max-width: $mobile-threshold-width) {
+                    padding-left: 5px;
+                }
+            }
             @media screen and (max-width: $mobile-threshold-width) {
-                width: 50%;
+                justify-content: flex-end;
             }
         }
-        .search-name {
-            padding:                    5px 5px 5px 8px;
-            border-radius:              unset;
-            border-top-right-radius:    18px;
-            border-bottom-right-radius: 18px;
-            background-color:           white;
-            color:                      $base-color;
-            &.disabled {
-                padding-right: 10px;
-                color:         #ccc;
-                cursor:        default;
-            }
-            @media screen and (max-width: $mobile-threshold-width) {
-                padding-left: 5px;
-            }
+        @media screen and (min-width: 1200px) {
+            right: calc(0px - ((100vw - 1140px) / 2) - (15px - 7px));
         }
-        @media screen and (max-width: $mobile-threshold-width) {
-            right: -10px;
-            justify-content: flex-end;
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            right: calc(0px - ((100vw - 960px) / 2) - (15px - 7px));        
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            right: calc(0px - ((100vw - 720px) / 2) - (15px - 4px));        
+        }
+        @media screen and (min-width: 576px) and (max-width: 767px) {
+            right: calc(0px - ((100vw - 540px) / 2) - (15px - 2px));        
+        }
+        @media screen and (max-width: 575px) {
+            right: - 15px;
         }
     }
     nav {
