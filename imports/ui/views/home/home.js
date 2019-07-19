@@ -456,5 +456,3 @@ Template.Home.onRendered(function () {
 
     loadAllComics(instance);
 });
-
-Template.Home.onDestroyed(function () { });

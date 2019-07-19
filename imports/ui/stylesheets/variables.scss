@@ -1,12 +1,17 @@
 $base-color: #ec2427;
-$brand-font: Impact, Charcoal, sans-serif;
+$brand-font: Impacto, Impact, sans-serif;
 
-$mobile-threshold-width: 576px;
+$bootstrap-breakpoint-xl: 1200px;
+$bootstrap-breakpoint-lg: 992px;
+$bootstrap-breakpoint-md: 768px;
+$bootstrap-breakpoint-sm: 576px;
+$bootstrap-breakpoint-xs: 0;
 
-$header-height:           45px;
-$header-logo-width:       96px;
-$header-title-font-color: white;
-$header-title-font-size:  27px;
+$header-height:                  45px;
+$header-logo-width:              96px;
+$header-logo-display-breakpoint: 640px;
+$header-title-font-color:        white;
+$header-title-font-size:         27px;
 
 $footer-height: 30px;
 

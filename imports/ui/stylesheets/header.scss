@@ -13,7 +13,7 @@
             float: left;
             width: $header-logo-width;
         }
-        @media screen and (max-width: $mobile-threshold-width) {
+        @media screen and (max-width: $header-logo-display-breakpoint - 1px) {
             display: none;
         }
     }
@@ -26,7 +26,7 @@
         color:       $header-title-font-color;
         font-size:   $header-title-font-size;
         font-family: $brand-font;
-        @media screen and (max-width: $mobile-threshold-width) {
+        @media screen and (max-width: $header-logo-display-breakpoint - 1px) {
             left:        0;
             margin:      0px;
             margin-left: 5px;

@@ -1,11 +1,11 @@
 @import 'variables.scss';
 
 .page-container {
-    position: relative;
     .search-field-outer {
         position: absolute;
         width:    100vw;
-        top:      - $header-height;
+        top:      0;
+        left:     0;
         .search-field-wrapper {
             position:    absolute;
             right:       5px;
@@ -34,7 +34,7 @@
                 text-align:                right;
                 color:                     $base-color;
                 font-family:               $brand-font;
-                @media screen and (max-width: $mobile-threshold-width) {
+                @media screen and (max-width: $bootstrap-breakpoint-md - 1px) {
                     width: 50%;
                 }
             }
@@ -50,28 +50,13 @@
                     color:         #ccc;
                     cursor:        default;
                 }
-                @media screen and (max-width: $mobile-threshold-width) {
+                @media screen and (max-width: $bootstrap-breakpoint-sm) {
                     padding-left: 5px;
                 }
             }
-            @media screen and (max-width: $mobile-threshold-width) {
+            @media screen and (max-width: $bootstrap-breakpoint-md - 1px) {
                 justify-content: flex-end;
             }
-        }
-        @media screen and (min-width: 1200px) {
-            right: calc(0px - ((100vw - 1140px) / 2) - (15px - 7px));
-        }
-        @media screen and (min-width: 992px) and (max-width: 1199px) {
-            right: calc(0px - ((100vw - 960px) / 2) - (15px - 7px));        
-        }
-        @media screen and (min-width: 768px) and (max-width: 991px) {
-            right: calc(0px - ((100vw - 720px) / 2) - (15px - 4px));        
-        }
-        @media screen and (min-width: 576px) and (max-width: 767px) {
-            right: calc(0px - ((100vw - 540px) / 2) - (15px - 2px));        
-        }
-        @media screen and (max-width: 575px) {
-            right: - 15px;
         }
     }
     nav {
@@ -127,8 +112,14 @@
                 position: relative;
                 width:    100%;
             }
-            @media screen and (max-width: $mobile-threshold-width) {
+            @media screen and (min-width: $bootstrap-breakpoint-md) and (max-width: $bootstrap-breakpoint-lg - 1px) {
+                width: 25%;
+            }
+            @media screen and (min-width: $bootstrap-breakpoint-sm) and (max-width: $bootstrap-breakpoint-md - 1px) {
                 width: 33.33%;
+            }
+            @media screen and (max-width: $bootstrap-breakpoint-sm - 1px) {
+                width: 50%;
             }
         }
         //trick to center something vertically: position absolute, top, left, transform
@@ -213,7 +204,7 @@
                     }
                 }
             }
-            @media screen and (max-width: $mobile-threshold-width) {
+            @media screen and (max-width: $bootstrap-breakpoint-sm) {
                 margin: 3px;
             }
         }
