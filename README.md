@@ -25,6 +25,6 @@ Pronto! =)
 
 ### 2. Baixando os pacotes npm
 
-Uma ver tendo o Meteor instalado, basta executar dentro da pasta do projeto o comando `meteor npm install --save`, e ele vai varrer o arquivo `package.json` e instalar tudo o que o projeto precisa. Faz parte das boas práticas de desenvolvimento não submeter a pasta onde os pacotes npm ficam (`node_modules`), logo toda vez que alguém for rodar um projeto novo do zero, vai ser necessário instalar os pacotes.
+Uma vez tendo o Meteor instalado, basta executar dentro da pasta do projeto o comando `meteor npm install --save`, e ele vai varrer o arquivo `package.json` e instalar tudo o que o projeto precisa. Faz parte das boas práticas de desenvolvimento não submeter a pasta onde os pacotes npm ficam (`node_modules`), logo toda vez que alguém for rodar um projeto novo do zero, vai ser necessário instalar os pacotes.
 
 Nesse projeto específico aqui, foi feita uma correção no arquivo que está no endereço `node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss` do projeto; para tentar manter essa correção, foi submetida a pasta `node_modules` junto com o resto do projeto, **coisa que não é prática recomendada pelos desenvolvedores, e nem é comum de acontecer**.
