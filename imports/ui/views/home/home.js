@@ -7,6 +7,8 @@ import moment from 'moment';
 
 import './home.html';
 
+//function to return control variables and status indicators in the template instance
+//to the initial state
 function resetTemplate (instance) {
 
     instance.name.set('');
@@ -23,6 +25,9 @@ function resetTemplate (instance) {
     instance.canLoadMore  = 'NO';
 }
 
+
+//function to load comics from the server in the template instance, and update all
+//the variables and status needed
 function loadAllComics (instance) {
 
     let comics       = instance.comics.get(),
@@ -51,6 +56,8 @@ function loadAllComics (instance) {
     });
 }
 
+//function to load comics from the server in the template instance (based in a
+//full/partial character name), and update all the variables and status needed
 function loadComicsWithName (instance) {
 
     let name         = instance.name.get(),

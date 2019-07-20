@@ -9,6 +9,8 @@ import md5    from 'md5';
 import '../characters/methods.js';
 
 Meteor.methods({
+    //method to return an array of comics objects, based on a load limit from
+    //the caller and skipping results in a certain offset
     'comics.getAll': (limit, comicsOffset) => {
 
         check(limit, Number);
@@ -39,6 +41,9 @@ Meteor.methods({
 
         return comics;
     },
+    //method to return an array of comics objects, based on the full/partial name
+    //of characters, a load limit from the caller, a loop group to indicate in which
+    //interval of characters we currently are, and skipping results in a certain offset
     'comics.getByCharacterName': (characterName, limit, loopGroup, comicsOffset) => {
 
         check(characterName, String);
@@ -86,8 +91,8 @@ Meteor.methods({
             console.log('fullRequestURI: ', fullRequestURI);
             console.log('result.data.data.count: ', result.data.data.count);
 
-            resultComics        = result.data.data.results;
-            resultComics        = resultComics.slice(0, (limit - comics.length));
+            resultComics = result.data.data.results;
+            resultComics = resultComics.slice(0, (limit - comics.length));
 
             comics = comics.concat(resultComics);
 

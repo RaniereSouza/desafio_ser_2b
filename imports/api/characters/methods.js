@@ -7,6 +7,8 @@ import moment from 'moment';
 import md5    from 'md5';
 
 Meteor.methods({
+    //method to return an array of character IDs based on the full/partial name,
+    //skipping results in a certain offset
     'characters.getIDsByName': (name, offset) => {
 
         check(name, String);
