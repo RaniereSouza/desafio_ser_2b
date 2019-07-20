@@ -3,7 +3,7 @@
 .page-container {
     .search-field-outer {
         position: absolute;
-        width:    100vw;
+        width:    calc(100vw - (100vw - 100%)); //getting rid of the scrollbar width in browsers
         top:      0;
         left:     0;
         .search-field-wrapper {
