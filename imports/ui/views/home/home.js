@@ -208,7 +208,7 @@ Template.Home.events({
 
         t.$('.load-more.ready').removeClass('ready');
         t.$('.load-more').addClass('loading');
-        t.$('.load-more').html('<span class="fas fa-hourglass-half"></span>');
+        t.$('.load-more').html('<span class="fas fa-hourglass-half blink"></span>');
 
         let name = t.name.get();
 
@@ -274,7 +274,7 @@ Template.Home.events({
 
             t.$('.search-name').removeClass('ready');
             t.$('.search-name').addClass('disabled');
-            t.$('.search-name').html('<span class="fas fa-hourglass-half"></span>');
+            t.$('.search-name').html('<span class="fas fa-hourglass-half blink"></span>');
             t.$('input.search-field').val(name);
             t.$('input.search-field').addClass('disabled');
             t.$('input.search-field').attr('readonly', 'readonly');
