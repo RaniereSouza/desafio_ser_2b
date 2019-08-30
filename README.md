@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como parte de um desafio apresentado pela empresa [Ser 2B Educação](https://www.editora2b.com.br/), mas que também passo a ser um projeto para revisão e estudo das estruturas mais recentes na plataforma Meteor.
 
+Uma versão desse projeto está atualmente rodando no Heroku e pode ser acessada [por aqui](https://desafio-ser-2b.herokuapp.com/).
+
 ## Como rodar na minha máquina? ##
 
 As etapas para poder fazer o projeto rodar localmente e ver seu funcionamento no seu próprio computador são em resumo estas (serão explicadas com mais detalhes em partes futuras do documento, se necessário):
