@@ -1,6 +1,6 @@
 # Excelsior! (Desafio Ser 2B)
 
-Projeto desenvolvido como parte de um desafio apresentado pela empresa [Ser 2B Educação](https://www.editora2b.com.br/), mas que também passo a ser um projeto para revisão e estudo das estruturas mais recentes na plataforma Meteor.
+Projeto desenvolvido como parte de um desafio apresentado pela empresa [Editora 2B Educação](https://www.editora2b.com.br/), mas que também passo a ser um projeto para revisão e estudo das estruturas mais recentes na plataforma Meteor.
 
 Uma versão desse projeto está atualmente rodando no Heroku e pode ser acessada [por aqui](https://desafio-ser-2b.herokuapp.com/).
 
